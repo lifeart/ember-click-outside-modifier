@@ -3,6 +3,9 @@ ember-click-outside-modifier
 
 Ember modifier to react on clicks outside an element without stopping the event propagation. Great for closing dialogues, menus among other things.
 
+If you need more control on click outside - take a look at [ember-click-outside](https://github.com/zeppelin/ember-click-outside)
+
+Inspired by [v-click-outside](https://github.com/ndelvalle/v-click-outside)
 
 Compatibility
 ------------------------------------------------------------------------------

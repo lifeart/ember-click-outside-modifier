@@ -8,7 +8,20 @@ const EVENTS = IS_TOUCH ? ['touchstart'] : ['click']
 
 import { modifier } from 'ember-modifier';
 
-export default modifier(function clickOutside(element, [handlerValue, useCapture] = [undefined, false]) {
+function getEventNames({ event, events }) {
+  if (events) {
+    return events;
+  }
+
+  if (event) {
+    return [event];
+  }
+
+  return EVENTS;
+}
+
+export default modifier(function clickOutside(element, [handlerValue, useCapture] = [undefined, false], hashParams = {}) {
+    const events = getEventNames(hashParams);
     const isFunction = typeof handlerValue === 'function'
     if (!isFunction) {
       throw new Error(
@@ -16,7 +29,7 @@ export default modifier(function clickOutside(element, [handlerValue, useCapture
       )
     }
     const handlers = [];
-    EVENTS.forEach((eventName)=>{
+    events.forEach((eventName)=>{
         const handler = (event) => {
             const isClickOutside = event.target !== element && !element.contains(event.target);
             if (!isClickOutside) {

@@ -30,6 +30,13 @@ Usage
 <div {{click-outside this.onClickOutside}}></div>
 ```
 
+You can also provide specific events that you want to bind to with the `event` or `events` named arguments.
+
+```hbs
+<div {{click-outside this.onClickOutside event='mouseup'}}></div>
+<div {{click-outside this.onClickOutside events=(array 'click' 'mouseup')}}></div>
+```
+
 
 Contributing
 ------------------------------------------------------------------------------

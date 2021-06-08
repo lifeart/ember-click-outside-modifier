@@ -3,65 +3,75 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render, click, triggerEvent } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Modifier | click-outside', function(hooks) {
+module('Integration | Modifier | click-outside', function (hooks) {
   setupRenderingTest(hooks);
 
   // Replace this with your real tests.
-  test('simple case', async function(assert) {
+  test('simple case', async function (assert) {
     let outsideClicked = false;
-    this.set('onClickOutside',()=>{
+    this.set('onClickOutside', () => {
       outsideClicked = true;
     });
-    await render(hbs`<div class="outside"></div><div {{click-outside this.onClickOutside}} class="inside"></div>`);
+    await render(
+      hbs`<div class="outside"></div><div {{click-outside this.onClickOutside}} class="inside"></div>`
+    );
     assert.ok(true);
     await click('.inside');
     assert.equal(outsideClicked, false);
     await click('.outside');
     assert.equal(outsideClicked, true);
   });
-  test('nested case', async function(assert) {
+  test('nested case', async function (assert) {
     let outsideClicked = false;
-    this.set('onClickOutside',()=>{
+    this.set('onClickOutside', () => {
       outsideClicked = true;
     });
-    await render(hbs`<div class="outside"></div><div {{click-outside this.onClickOutside}}><div  class="inside"></div></div>`);
+    await render(
+      hbs`<div class="outside"></div><div {{click-outside this.onClickOutside}}><div  class="inside"></div></div>`
+    );
     assert.ok(true);
     await click('.inside');
     assert.equal(outsideClicked, false);
     await click('.outside');
     assert.equal(outsideClicked, true);
   });
-  test('wrapped case', async function(assert) {
+  test('wrapped case', async function (assert) {
     let outsideClicked = false;
-    this.set('onClickOutside',()=>{
+    this.set('onClickOutside', () => {
       outsideClicked = true;
     });
-    await render(hbs`<div class="outside"><div {{click-outside this.onClickOutside}}><div class="inside"></div></div></div>`);
+    await render(
+      hbs`<div class="outside"><div {{click-outside this.onClickOutside}}><div class="inside"></div></div></div>`
+    );
     assert.ok(true);
     await click('.inside');
     assert.equal(outsideClicked, false);
     await click('.outside');
     assert.equal(outsideClicked, true);
   });
-  module('configurable event bindings', function() {
-    test('single event', async function(assert) {
+  module('configurable event bindings', function () {
+    test('single event', async function (assert) {
       let outsideClicked = false;
-      this.set('onClickOutside',()=>{
+      this.set('onClickOutside', () => {
         outsideClicked = true;
       });
-      await render(hbs`<div class="outside"><div {{click-outside this.onClickOutside event="mouseup"}}><div class="inside"></div></div></div>`);
+      await render(
+        hbs`<div class="outside"><div {{click-outside this.onClickOutside event="mouseup"}}><div class="inside"></div></div></div>`
+      );
       assert.ok(true);
       await triggerEvent('.inside', 'mouseup');
       assert.equal(outsideClicked, false);
       await triggerEvent('.outside', 'mouseup');
       assert.equal(outsideClicked, true);
     });
-    test('multiple events', async function(assert) {
+    test('multiple events', async function (assert) {
       let outsideClicked = 0;
-      this.set('onClickOutside',()=>{
+      this.set('onClickOutside', () => {
         outsideClicked++;
       });
-      await render(hbs`<div class="outside"><div {{click-outside this.onClickOutside events=(array "mouseup" "click")}}><div class="inside"></div></div></div>`);
+      await render(
+        hbs`<div class="outside"><div {{click-outside this.onClickOutside events=(array "mouseup" "click")}}><div class="inside"></div></div></div>`
+      );
       assert.ok(true);
       await triggerEvent('.inside', 'mouseup');
       await triggerEvent('.inside', 'click');

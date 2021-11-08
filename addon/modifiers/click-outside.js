@@ -25,6 +25,7 @@ export default modifier(function clickOutside(
   [handlerValue, useCapture] = [undefined, false],
   hashParams = {}
 ) {
+  const refEvent = new Event('clickReference');
   const events = getEventNames(hashParams);
   const isFunction = typeof handlerValue === 'function';
   if (!isFunction) {
@@ -33,6 +34,9 @@ export default modifier(function clickOutside(
   const handlers = [];
   events.forEach((eventName) => {
     const handler = (event) => {
+      if (refEvent.timeStamp > event.timeStamp) {
+        return;
+      }
       const isClickOutside =
         event.target !== element && !element.contains(event.target);
       if (!isClickOutside) {

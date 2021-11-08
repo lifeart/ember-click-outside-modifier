@@ -49,6 +49,27 @@ module('Integration | Modifier | click-outside', function (hooks) {
     await click('.outside');
     assert.equal(outsideClicked, true);
   });
+
+  test('it does not capture preceding events', async function (assert) {
+    let outsideClicked = false;
+    this.set('onClickOutside', () => {
+      outsideClicked = true;
+    });
+    this.set('show', false);
+    this.set('onClick', () => {
+      this.set('show', true);
+    });
+    await render(
+      hbs`
+        <button type="button" {{on "click" this.onClick}}>Show</button>
+        {{#if this.show}}<div class="outside"></div><div {{click-outside this.onClickOutside}} class="inside"></div>{{/if}}
+      `
+    );
+    assert.ok(true);
+    await click('button');
+    assert.equal(outsideClicked, false);
+  });
+
   module('configurable event bindings', function () {
     test('single event', async function (assert) {
       let outsideClicked = false;

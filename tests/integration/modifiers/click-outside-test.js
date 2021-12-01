@@ -1,12 +1,11 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, click, triggerEvent } from '@ember/test-helpers';
-import hbs from 'htmlbars-inline-precompile';
+import { hbs } from 'ember-cli-htmlbars';
 
 module('Integration | Modifier | click-outside', function (hooks) {
   setupRenderingTest(hooks);
 
-  // Replace this with your real tests.
   test('simple case', async function (assert) {
     let outsideClicked = false;
     this.set('onClickOutside', () => {
@@ -21,6 +20,7 @@ module('Integration | Modifier | click-outside', function (hooks) {
     await click('.outside');
     assert.equal(outsideClicked, true);
   });
+
   test('nested case', async function (assert) {
     let outsideClicked = false;
     this.set('onClickOutside', () => {
@@ -35,6 +35,7 @@ module('Integration | Modifier | click-outside', function (hooks) {
     await click('.outside');
     assert.equal(outsideClicked, true);
   });
+
   test('wrapped case', async function (assert) {
     let outsideClicked = false;
     this.set('onClickOutside', () => {
@@ -85,6 +86,7 @@ module('Integration | Modifier | click-outside', function (hooks) {
       await triggerEvent('.outside', 'mouseup');
       assert.equal(outsideClicked, true);
     });
+
     test('multiple events', async function (assert) {
       let outsideClicked = 0;
       this.set('onClickOutside', () => {
@@ -102,6 +104,7 @@ module('Integration | Modifier | click-outside', function (hooks) {
       assert.equal(outsideClicked, 2);
     });
   });
+
   // test('error case', async function(assert) {
   //   try {
   //     await render(hbs`<div class="outside"><div {{click-outside this.fff}}><div class="inside"></div></div></div>`);

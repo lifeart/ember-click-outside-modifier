@@ -4,7 +4,7 @@
   "description": "Ember modifier to catch events outside marked DOM element",
   "keywords": [
     "ember-addon",
-    "emer-modifier"
+    "ember-modifier"
   ],
   "repository": "lifeart/ember-click-outside-modifier",
   "license": "MIT",

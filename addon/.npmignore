@@ -1,0 +1,14 @@
+# compiled output
+/dist/
+/tmp/
+
+# misc
+/.env*
+/.eslintcache
+/.eslintignore
+/.eslintrc.js
+/.git/
+/.gitignore
+/.prettierignore
+/.prettierrc.js
+.gitkeep

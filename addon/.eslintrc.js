@@ -2,12 +2,16 @@
 
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 'latest',
     sourceType: 'module',
     ecmaFeatures: {
       legacyDecorators: true,
+    },
+    requireConfigFile: false,
+    babelOptions: {
+      plugins: [['@babel/plugin-proposal-decorators', { legacy: true }]],
     },
   },
   plugins: ['ember'],
@@ -26,7 +30,7 @@ module.exports = {
       files: [
         './.eslintrc.js',
         './.prettierrc.js',
-        './index.js',
+        './addon-main.js',
         './config/**/*.js',
       ],
       parserOptions: {

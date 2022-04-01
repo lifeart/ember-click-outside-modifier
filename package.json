@@ -5,6 +5,10 @@
     "addon",
     "test-app"
   ],
+  "scripts": {
+    "prepare": "cd addon && yarn build",
+    "test": "cd test-app && yarn test"
+  },
   "devDependencies": {
     "release-it": "^14.14.0",
     "release-it-lerna-changelog": "^4.0.1",

@@ -5,7 +5,43 @@
     "addon",
     "test-app"
   ],
+  "devDependencies": {
+    "release-it": "^14.14.0",
+    "release-it-lerna-changelog": "^4.0.1",
+    "release-it-yarn-workspaces": "^2.0.1"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
+  },
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": true
+      },
+      "release-it-yarn-workspaces": {
+        "workspaces": [
+          "addon"
+        ],
+        "additionalManifests": {
+          "dependencyUpdates": [
+            "package.json",
+            "test-app/package.json"
+          ],
+          "versionUpdates": [
+            "package.json",
+            "test-app/package.json"
+          ]
+        }
+      }
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    },
+    "npm": false
   }
 }

@@ -5,6 +5,10 @@
     "addon",
     "test-app"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lifeart/ember-click-outside-modifier.git"
+  },
   "scripts": {
     "prepare": "cd addon && yarn build",
     "test": "cd test-app && yarn test"

@@ -4898,9 +4898,9 @@ ember-maybe-import-regenerator@^1.0.0:
     regenerator-runtime "^0.13.2"
 
 ember-modifier@^3.0.0:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/ember-modifier/-/ember-modifier-3.2.1.tgz#7078403b5b84d7b97d0b3298851d33d098a7b82d"
-  integrity sha512-8mMLUX/pclAfrX99RemTsyimVM/8zJ1ZzGOqny2TfUKeFzon3a+mxPUmBhY+TS6W4aNBW32YSeFytEtG01bTdQ==
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/ember-modifier/-/ember-modifier-3.2.5.tgz#b82052afe941f3b27c0840019992d59466dfbd77"
+  integrity sha512-66YA4pQijoDIAfoI0pYAhjYWu/VrTaD3BfxpA311hLIoBlaI2QQY/LR+32aah1EvKY/yInnCJA5wcl7C+f3mkg==
   dependencies:
     ember-cli-babel "^7.26.6"
     ember-cli-normalize-entity-name "^1.0.0"

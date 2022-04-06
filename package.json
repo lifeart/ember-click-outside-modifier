@@ -11,7 +11,7 @@
   },
   "scripts": {
     "prepare": "cd addon && yarn build",
-    "test": "cd test-app && yarn test"
+    "test": "cd test-app && yarn test:ember"
   },
   "devDependencies": {
     "release-it": "^14.14.0",

@@ -13,6 +13,7 @@ Compatibility
 * Ember.js v3.16 or above
 * Ember CLI v2.13 or above
 * Node.js v14 or above
+* ember-auto-import v2.0.0 or above (this is [v2 addon](https://emberjs.github.io/rfcs/0507-embroider-v2-package-format.html))
 
 
 Installation

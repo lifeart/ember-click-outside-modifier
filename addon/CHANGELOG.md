@@ -1,3 +1,27 @@
+# Changelog
+
+## v4.0.0 (2022-04-08)
+
+#### :boom: Breaking Change
+* [#14](https://github.com/lifeart/ember-click-outside-modifier/pull/14) Convert to v2 addon ([@SergeAstapov](https://github.com/SergeAstapov))
+* [#15](https://github.com/lifeart/ember-click-outside-modifier/pull/15) Drop Node.js 12 support ([@SergeAstapov](https://github.com/SergeAstapov))
+
+#### :rocket: Enhancement
+* [#19](https://github.com/lifeart/ember-click-outside-modifier/pull/19) Prepare for ember-modifier v4 ([@SergeAstapov](https://github.com/SergeAstapov))
+* [#14](https://github.com/lifeart/ember-click-outside-modifier/pull/14) Convert to v2 addon ([@SergeAstapov](https://github.com/SergeAstapov))
+
+#### :memo: Documentation
+* [#18](https://github.com/lifeart/ember-click-outside-modifier/pull/18) move .md files to published package ([@SergeAstapov](https://github.com/SergeAstapov))
+* [#17](https://github.com/lifeart/ember-click-outside-modifier/pull/17) Add CHANGELOG.md ([@SergeAstapov](https://github.com/SergeAstapov))
+
+#### :house: Internal
+* [#16](https://github.com/lifeart/ember-click-outside-modifier/pull/16) Add release-it setup ([@SergeAstapov](https://github.com/SergeAstapov))
+* [#13](https://github.com/lifeart/ember-click-outside-modifier/pull/13) Convert to monorepo ([@SergeAstapov](https://github.com/SergeAstapov))
+
+#### Committers: 1
+- Sergey Astapov ([@SergeAstapov](https://github.com/SergeAstapov))
+
+
 ## v3.0.2 (2022-03-17)
 
 #### :rocket: Enhancement

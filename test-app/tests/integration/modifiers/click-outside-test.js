@@ -16,9 +16,9 @@ module('Integration | Modifier | click-outside', function (hooks) {
     );
     assert.ok(true);
     await click('.inside');
-    assert.equal(outsideClicked, false);
+    assert.false(outsideClicked);
     await click('.outside');
-    assert.equal(outsideClicked, true);
+    assert.true(outsideClicked);
   });
 
   test('nested case', async function (assert) {
@@ -31,9 +31,9 @@ module('Integration | Modifier | click-outside', function (hooks) {
     );
     assert.ok(true);
     await click('.inside');
-    assert.equal(outsideClicked, false);
+    assert.false(outsideClicked);
     await click('.outside');
-    assert.equal(outsideClicked, true);
+    assert.true(outsideClicked);
   });
 
   test('wrapped case', async function (assert) {
@@ -46,9 +46,9 @@ module('Integration | Modifier | click-outside', function (hooks) {
     );
     assert.ok(true);
     await click('.inside');
-    assert.equal(outsideClicked, false);
+    assert.false(outsideClicked);
     await click('.outside');
-    assert.equal(outsideClicked, true);
+    assert.true(outsideClicked);
   });
 
   test('it does not capture preceding events', async function (assert) {
@@ -68,7 +68,7 @@ module('Integration | Modifier | click-outside', function (hooks) {
     );
     assert.ok(true);
     await click('button');
-    assert.equal(outsideClicked, false);
+    assert.false(outsideClicked);
   });
 
   module('configurable event bindings', function () {
@@ -82,9 +82,9 @@ module('Integration | Modifier | click-outside', function (hooks) {
       );
       assert.ok(true);
       await triggerEvent('.inside', 'mouseup');
-      assert.equal(outsideClicked, false);
+      assert.false(outsideClicked);
       await triggerEvent('.outside', 'mouseup');
-      assert.equal(outsideClicked, true);
+      assert.true(outsideClicked);
     });
 
     test('multiple events', async function (assert) {
@@ -98,18 +98,23 @@ module('Integration | Modifier | click-outside', function (hooks) {
       assert.ok(true);
       await triggerEvent('.inside', 'mouseup');
       await triggerEvent('.inside', 'click');
-      assert.equal(outsideClicked, 0);
+      assert.strictEqual(outsideClicked, 0);
       await triggerEvent('.outside', 'mouseup');
       await triggerEvent('.outside', 'click');
-      assert.equal(outsideClicked, 2);
+      assert.strictEqual(outsideClicked, 2);
     });
   });
 
-  // test('error case', async function(assert) {
-  //   try {
-  //     await render(hbs`<div class="outside"><div {{click-outside this.fff}}><div class="inside"></div></div></div>`);
-  //   } catch(e) {
-  //     assert.equal(e.toString(), 'Error: {{click-outside}}: Binding value must be a function');
-  //   }
-  // });
+  test.skip('error case', async function (assert) {
+    try {
+      await render(
+        hbs`<div class="outside"><div {{click-outside this.fff}}><div class="inside"></div></div></div>`
+      );
+    } catch (e) {
+      assert.equal(
+        e.toString(),
+        'Error: {{click-outside}}: Binding value must be a function'
+      );
+    }
+  });
 });

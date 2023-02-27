@@ -47,9 +47,6 @@
     "prettier": "^2.6.2",
     "rollup": "^2.70.2"
   },
-  "engines": {
-    "node": "14.* || 16.* || >= 18"
-  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },

@@ -29,7 +29,7 @@ jobs:
 
       - name: Lint Addon
         run: yarn lint
-        working-directory: addon
+        working-directory: ember-click-outside-modifier
 
       - name: Lint Test App
         run: yarn lint

@@ -2,7 +2,7 @@
   "version": "4.0.0",
   "private": true,
   "workspaces": [
-    "addon",
+    "ember-click-outside-modifier",
     "test-app"
   ],
   "repository": {
@@ -10,7 +10,7 @@
     "url": "git@github.com:lifeart/ember-click-outside-modifier.git"
   },
   "scripts": {
-    "prepare": "cd addon && yarn build",
+    "prepare": "cd ember-click-outside-modifier && yarn build",
     "test": "cd test-app && yarn test:ember"
   },
   "devDependencies": {
@@ -23,7 +23,7 @@
   },
   "release-it": {
     "hooks": {
-      "before:init": "cp README.md LICENSE.md addon/"
+      "before:init": "cp README.md LICENSE.md ember-click-outside-modifier/"
     },
     "plugins": {
       "release-it-lerna-changelog": {
@@ -32,7 +32,7 @@
       },
       "release-it-yarn-workspaces": {
         "workspaces": [
-          "addon"
+          "ember-click-outside-modifier"
         ],
         "additionalManifests": {
           "dependencyUpdates": [

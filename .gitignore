@@ -7,8 +7,8 @@ dist/
 node_modules/
 
 # misc
-/addon/README.md
-/addon/LICENSE.md
+/ember-click-outside-modifier/README.md
+/ember-click-outside-modifier/LICENSE.md
 .env*
 .pnp*
 .sass-cache

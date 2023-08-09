@@ -1,5 +1,28 @@
 # Changelog
 
+
+## v4.1.0 (2023-08-09)
+
+#### :rocket: Enhancement
+* [#38](https://github.com/lifeart/ember-click-outside-modifier/pull/38) Glint Support ([@SergeAstapov](https://github.com/SergeAstapov))
+* [#32](https://github.com/lifeart/ember-click-outside-modifier/pull/32) Winden ember-modifier version range to allow v4 ([@SergeAstapov](https://github.com/SergeAstapov))
+* [#33](https://github.com/lifeart/ember-click-outside-modifier/pull/33) Remove engines field from addon package.json ([@SergeAstapov](https://github.com/SergeAstapov))
+* [#24](https://github.com/lifeart/ember-click-outside-modifier/pull/24) auto-publish unstable packages to NPM ([@SergeAstapov](https://github.com/SergeAstapov))
+
+#### :memo: Documentation
+* [#23](https://github.com/lifeart/ember-click-outside-modifier/pull/23) Improve contributing docs ([@SergeAstapov](https://github.com/SergeAstapov))
+
+#### :house: Internal
+* [#37](https://github.com/lifeart/ember-click-outside-modifier/pull/37) replace publish-unstable with push-dist ([@SergeAstapov](https://github.com/SergeAstapov))
+* [#28](https://github.com/lifeart/ember-click-outside-modifier/pull/28) Add 4.4 and 4.8 LTS ember-try scenarios ([@SergeAstapov](https://github.com/SergeAstapov))
+* [#26](https://github.com/lifeart/ember-click-outside-modifier/pull/26) Rename addon folder to ember-click-outside-modifier ([@SergeAstapov](https://github.com/SergeAstapov))
+* [#25](https://github.com/lifeart/ember-click-outside-modifier/pull/25) Use release-it hook to copy .md files at publish time ([@SergeAstapov](https://github.com/SergeAstapov))
+* [#22](https://github.com/lifeart/ember-click-outside-modifier/pull/22) run `npx ember-cli-update --to=v4.3.0` to align with blueprint ([@SergeAstapov](https://github.com/SergeAstapov))
+* [#21](https://github.com/lifeart/ember-click-outside-modifier/pull/21) add `eslint-plugin-qunit` per latest blueprint ([@SergeAstapov](https://github.com/SergeAstapov))
+
+#### Committers: 1
+- Sergey Astapov ([@SergeAstapov](https://github.com/SergeAstapov))
+
 ## v4.0.0 (2022-04-08)
 
 #### :boom: Breaking Change

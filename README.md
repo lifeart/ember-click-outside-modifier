@@ -38,6 +38,42 @@ You can also provide specific events that you want to bind to with the `event` o
 <div {{click-outside this.onClickOutside events=(array 'click' 'mouseup')}}></div>
 ```
 
+## Usage with Glint
+
+`ember-click-outside-modifier` is a glint enabled addon. Add this to your
+`types/global.d.ts` file:
+
+```ts
+import '@glint/environment-ember-loose';
+
+import type EmberClickOutsideRegistry from 'ember-click-outside-modifier/template-registry';
+
+declare module '@glint/environment-ember-loose/registry' {
+  export default interface Registry extends EmberClickOutsideRegistry, /* other addon registries */ {
+    // local entries
+  }
+}
+```
+
+For the entire guide, please refer to [Using
+Addons](https://typed-ember.gitbook.io/glint/environments/ember/using-addons#using-glint-enabled-addons)
+section on the glint handbook.
+
+Types are made available through package.json `exports` field.
+
+## Usage with <template> tag
+
+For usage in `gts` or `gjs` files, modifier are exported from the index:
+
+```gts
+import { clickOutside } from 'ember-truth-helpers';
+
+<template>
+  <div {{clickOutside this.handleClickOutside}}>
+    Lorem ipsum.
+  </div>
+</template>
+```
 
 Contributing
 ------------------------------------------------------------------------------

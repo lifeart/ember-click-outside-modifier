@@ -1,0 +1,5 @@
+<button type="button" {{click-outside this.noop}}>Click me!</button>
+<button type="button" {{click-outside this.noop true}}>Click me!</button>
+<button type="button" {{click-outside this.noop false}}>Click me!</button>
+<button type="button" {{click-outside this.noop event="touchstart"}}>Click me!</button>
+<button type="button" {{click-outside this.noop events=(array "touchstart" "touchend")}}>Click me!</button>

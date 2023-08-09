@@ -65,7 +65,7 @@ Types are made available through package.json `exports` field.
 For usage in `gts` or `gjs` files, modifier are exported from the index:
 
 ```gts
-import { clickOutside } from 'ember-truth-helpers';
+import { clickOutside } from 'ember-click-outside-modifier';
 
 <template>
   <div {{clickOutside this.handleClickOutside}}>

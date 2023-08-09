@@ -15,8 +15,8 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd test-app`
+* `git clone https://github.com/lifeart/ember-click-outside-modifier.git` this repository
+* `cd ember-click-outside-modifier/test-app`
 * `yarn install`
 
 ## Running / Development

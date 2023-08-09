@@ -60,11 +60,11 @@ section on the glint handbook.
 
 Types are made available through package.json `exports` field.
 
-## Usage with <template> tag
+## Usage with `<template>` tag
 
 For usage in `gts` or `gjs` files, modifier are exported from the index:
 
-```gts
+```hbs
 import { clickOutside } from 'ember-click-outside-modifier';
 
 <template>

@@ -90,7 +90,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - run: |
-          [[ "${{ matrix.try-scenario }}" = "ember-lts-3.20" ]] && yarn add -D ember-modifier@3.0 || true
+          [[ "${{ matrix.try-scenario }}" = "ember-lts-3.20" ]] && yarn add ember-modifier@3.0 || true
         working-directory: ember-click-outside-modifier
 
       - name: Run Tests
@@ -122,9 +122,13 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Update ember-modifier version
-        run: yarn add -D ${{ matrix.ember-modifier-scenario }}
+      - name: Update ember-modifier version in addon
+        run: yarn add ${{ matrix.ember-modifier-scenario }}
         working-directory: ember-click-outside-modifier
+
+      - name: Update ember-modifier version in test-app
+        run: yarn add -D ${{ matrix.ember-modifier-scenario }}
+        working-directory: test-app
 
       - name: Run Tests
         run: yarn test:ember

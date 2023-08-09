@@ -71,6 +71,7 @@ jobs:
           - ember-lts-3.28
           - ember-lts-4.4
           - ember-lts-4.8
+          - ember-lts-4.12
           - ember-release
           - ember-beta
           - ember-canary
@@ -89,6 +90,47 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
+      - run: |
+          [[ "${{ matrix.try-scenario }}" = "ember-lts-3.20" ]] && yarn add ember-modifier@3.0 || true
+        working-directory: ember-click-outside-modifier
+
       - name: Run Tests
         run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
+        working-directory: test-app
+
+  ember-modifier-scenarios:
+    name: ${{ matrix.ember-modifier-scenario }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: 'test'
+
+    strategy:
+      fail-fast: false
+      matrix:
+        ember-modifier-scenario:
+          - ember-modifier@3.0
+          - ember-modifier@^3.2
+          - ember-modifier@^4.0.0
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: yarn
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Update ember-modifier version in addon
+        run: yarn add ${{ matrix.ember-modifier-scenario }}
+        working-directory: ember-click-outside-modifier
+
+      - name: Update ember-modifier version in test-app
+        run: yarn add -D ${{ matrix.ember-modifier-scenario }}
+        working-directory: test-app
+
+      - name: Run Tests
+        run: yarn test:ember
         working-directory: test-app

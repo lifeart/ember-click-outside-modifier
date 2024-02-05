@@ -61,6 +61,7 @@
       "./modifiers/click-outside.js": "./dist/_app_/modifiers/click-outside.js"
     }
   },
+  "types": "./index.d.ts",
   "exports": {
     ".": "./dist/index.js",
     "./*": {

@@ -11,17 +11,17 @@ jobs:
     name: "Push dist"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 20.x
           cache: yarn
 
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
-      - uses: kategengler/put-built-npm-package-contents-on-branch@v1.0.0
+      - uses: kategengler/put-built-npm-package-contents-on-branch@v2.0.0
         with:
           branch: ${{ github.head_ref || github.ref_name }}-dist
           working-directory: ember-click-outside-modifier

@@ -12,6 +12,7 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             '@ember/test-helpers': '^2.6.0',
+            'ember-cli-app-version': '^6.0.1',
             'ember-cli': '~3.20.0',
             'ember-modifier': '^3.0.0',
             'ember-qunit': '^5.1.5',
@@ -25,6 +26,7 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             '@ember/test-helpers': '^2.6.0',
+            'ember-cli-app-version': '^6.0.1',
             'ember-cli': '~3.24.0',
             'ember-qunit': '^5.1.5',
             'ember-resolver': '^8.0.3',
@@ -72,6 +74,30 @@ module.exports = async function () {
         },
       },
       {
+        name: 'ember-lts-5.4',
+        npm: {
+          devDependencies: {
+            'ember-source': '~5.4.0',
+          },
+        },
+      },
+      {
+        name: 'ember-lts-5.8',
+        npm: {
+          devDependencies: {
+            'ember-source': '~5.8.0',
+          },
+        },
+      },
+      {
+        name: 'ember-lts-5.12',
+        npm: {
+          devDependencies: {
+            'ember-source': '~5.12.0',
+          },
+        },
+      },
+      {
         name: 'ember-release',
         npm: {
           devDependencies: {
@@ -95,28 +121,6 @@ module.exports = async function () {
           devDependencies: {
             'ember-source': await getChannelURL('canary'),
             'ember-resolver': '^11.0.0',
-          },
-        },
-      },
-      {
-        name: 'ember-classic',
-        env: {
-          EMBER_OPTIONAL_FEATURES: JSON.stringify({
-            'application-template-wrapper': true,
-            'default-async-observers': false,
-            'template-only-glimmer-components': false,
-          }),
-        },
-        npm: {
-          devDependencies: {
-            '@ember/test-helpers': '^2.6.0',
-            'ember-cli': '~3.28.0',
-            'ember-qunit': '^5.1.5',
-            'ember-resolver': '^8.0.3',
-            'ember-source': '~3.28.9',
-          },
-          ember: {
-            edition: 'classic',
           },
         },
       },

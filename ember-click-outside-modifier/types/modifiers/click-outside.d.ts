@@ -4,8 +4,7 @@ export interface ClickOutsideSignature {
   Element?: HTMLElement;
   Args: {
     Positional: [handlerValue: (event: Event) => unknown, useCapture?: boolean];
-    Named:
-      | never
+    Named?:
       | {
           events?: string[];
         }

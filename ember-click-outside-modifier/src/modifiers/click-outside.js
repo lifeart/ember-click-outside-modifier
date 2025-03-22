@@ -24,7 +24,7 @@ export default modifier(
   function clickOutside(
     element,
     [handlerValue, useCapture] = [undefined, false],
-    hashParams = {}
+    hashParams = {},
   ) {
     const refEvent = new Event('clickReference');
     const events = getEventNames(hashParams);
@@ -53,10 +53,10 @@ export default modifier(
         document.documentElement.removeEventListener(
           eventName,
           handler,
-          useCapture
+          useCapture,
         );
       });
     };
   },
-  { eager: false }
+  { eager: false },
 );

@@ -1,6 +1,20 @@
 # Changelog
 
 
+
+## v4.1.1 (2025-03-22)
+
+#### :bug: Bug Fix
+* [#45](https://github.com/lifeart/ember-click-outside-modifier/pull/45) Add types for package entrypoint ([@SergeAstapov](https://github.com/SergeAstapov))
+
+#### :house: Internal
+* [#44](https://github.com/lifeart/ember-click-outside-modifier/pull/44) run `npx ember-cli-update` to align with addon blueprint ([@SergeAstapov](https://github.com/SergeAstapov))
+* [#42](https://github.com/lifeart/ember-click-outside-modifier/pull/42) Switch from yarn to pnpm ([@SergeAstapov](https://github.com/SergeAstapov))
+* [#43](https://github.com/lifeart/ember-click-outside-modifier/pull/43) Bump release-it and plugins ([@SergeAstapov](https://github.com/SergeAstapov))
+
+#### Committers: 1
+- Sergey Astapov ([@SergeAstapov](https://github.com/SergeAstapov))
+
 ## v4.1.0 (2023-08-09)
 
 #### :rocket: Enhancement

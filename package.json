@@ -1,24 +1,25 @@
 {
-  "version": "4.1.0",
   "private": true,
-  "workspaces": [
-    "ember-click-outside-modifier",
-    "test-app"
-  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:lifeart/ember-click-outside-modifier.git"
   },
   "scripts": {
-    "prepare": "cd ember-click-outside-modifier && pnpm build",
-    "test": "cd test-app && pnpm test:ember"
+    "build": "pnpm --filter ember-click-outside-modifier build",
+    "prepare": "pnpm build",
+    "lint": "pnpm --filter '*' lint",
+    "test": "pnpm --filter '*' test",
+    "test:ember": "pnpm --filter '*' test:ember"
   },
+  "packageManager": "pnpm@10.0.0",
   "devDependencies": {
+    "@glint/core": "^1.2.1",
     "@release-it-plugins/lerna-changelog": "^7.0.0",
     "@release-it-plugins/workspaces": "^4.2.0",
+    "concurrently": "^9.1.2",
+    "prettier-plugin-ember-template-tag": "^2.0.2",
     "release-it": "^18.1.2"
   },
-  "packageManager": "pnpm@10.6.5",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },

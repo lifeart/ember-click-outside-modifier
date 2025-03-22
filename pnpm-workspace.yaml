@@ -1,5 +1,5 @@
 packages:
-  - ember-click-outside-modifier
-  - test-app
+  - 'ember-click-outside-modifier'
+  - 'test-app'
 onlyBuiltDependencies:
-  - core-js
+  - 'core-js'

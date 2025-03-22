@@ -12,7 +12,7 @@ module('Integration | Modifier | click-outside', function (hooks) {
       outsideClicked = true;
     });
     await render(
-      hbs`<div class="outside"></div><div {{click-outside this.onClickOutside}} class="inside"></div>`
+      hbs`<div class="outside"></div><div {{click-outside this.onClickOutside}} class="inside"></div>`,
     );
     assert.ok(true);
     await click('.inside');
@@ -27,7 +27,7 @@ module('Integration | Modifier | click-outside', function (hooks) {
       outsideClicked = true;
     });
     await render(
-      hbs`<div class="outside"></div><div {{click-outside this.onClickOutside}}><div  class="inside"></div></div>`
+      hbs`<div class="outside"></div><div {{click-outside this.onClickOutside}}><div  class="inside"></div></div>`,
     );
     assert.ok(true);
     await click('.inside');
@@ -42,7 +42,7 @@ module('Integration | Modifier | click-outside', function (hooks) {
       outsideClicked = true;
     });
     await render(
-      hbs`<div class="outside"><div {{click-outside this.onClickOutside}}><div class="inside"></div></div></div>`
+      hbs`<div class="outside"><div {{click-outside this.onClickOutside}}><div class="inside"></div></div></div>`,
     );
     assert.ok(true);
     await click('.inside');
@@ -64,7 +64,7 @@ module('Integration | Modifier | click-outside', function (hooks) {
       hbs`
         <button type="button" {{on "click" this.onClick}}>Show</button>
         {{#if this.show}}<div class="outside"></div><div {{click-outside this.onClickOutside}} class="inside"></div>{{/if}}
-      `
+      `,
     );
     assert.ok(true);
     await click('button');
@@ -78,7 +78,7 @@ module('Integration | Modifier | click-outside', function (hooks) {
         outsideClicked = true;
       });
       await render(
-        hbs`<div class="outside"><div {{click-outside this.onClickOutside event="mouseup"}}><div class="inside"></div></div></div>`
+        hbs`<div class="outside"><div {{click-outside this.onClickOutside event="mouseup"}}><div class="inside"></div></div></div>`,
       );
       assert.ok(true);
       await triggerEvent('.inside', 'mouseup');
@@ -93,7 +93,7 @@ module('Integration | Modifier | click-outside', function (hooks) {
         outsideClicked++;
       });
       await render(
-        hbs`<div class="outside"><div {{click-outside this.onClickOutside events=(array "mouseup" "click")}}><div class="inside"></div></div></div>`
+        hbs`<div class="outside"><div {{click-outside this.onClickOutside events=(array "mouseup" "click")}}><div class="inside"></div></div></div>`,
       );
       assert.ok(true);
       await triggerEvent('.inside', 'mouseup');
@@ -108,12 +108,12 @@ module('Integration | Modifier | click-outside', function (hooks) {
   test.skip('error case', async function (assert) {
     try {
       await render(
-        hbs`<div class="outside"><div {{click-outside this.fff}}><div class="inside"></div></div></div>`
+        hbs`<div class="outside"><div {{click-outside this.fff}}><div class="inside"></div></div></div>`,
       );
     } catch (e) {
       assert.equal(
         e.toString(),
-        'Error: {{click-outside}}: Binding value must be a function'
+        'Error: {{click-outside}}: Binding value must be a function',
       );
     }
   });

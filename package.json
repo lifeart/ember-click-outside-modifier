@@ -35,17 +35,7 @@
       "@release-it-plugins/workspaces": {
         "workspaces": [
           "ember-click-outside-modifier"
-        ],
-        "additionalManifests": {
-          "dependencyUpdates": [
-            "package.json",
-            "test-app/package.json"
-          ],
-          "versionUpdates": [
-            "package.json",
-            "test-app/package.json"
-          ]
-        }
+        ]
       }
     },
     "git": {

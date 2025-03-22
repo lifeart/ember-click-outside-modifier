@@ -10,14 +10,15 @@
     "url": "git@github.com:lifeart/ember-click-outside-modifier.git"
   },
   "scripts": {
-    "prepare": "cd ember-click-outside-modifier && yarn build",
-    "test": "cd test-app && yarn test:ember"
+    "prepare": "cd ember-click-outside-modifier && pnpm build",
+    "test": "cd test-app && pnpm test:ember"
   },
   "devDependencies": {
     "@release-it-plugins/lerna-changelog": "^7.0.0",
     "@release-it-plugins/workspaces": "^4.2.0",
     "release-it": "^18.1.2"
   },
+  "packageManager": "pnpm@10.6.5",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
@@ -56,6 +57,7 @@
     "npm": false
   },
   "volta": {
-    "node": "20.19.0"
+    "node": "20.19.0",
+    "pnpm": "10.6.5"
   }
 }

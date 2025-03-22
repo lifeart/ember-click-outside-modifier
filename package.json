@@ -18,7 +18,7 @@
     "@release-it-plugins/workspaces": "^4.2.0",
     "concurrently": "^9.1.2",
     "prettier-plugin-ember-template-tag": "^2.0.2",
-    "release-it": "^18.1.2"
+    "release-it": "^17.11.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"

@@ -1,6 +1,6 @@
 {
   "name": "ember-click-outside-modifier",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "description": "Ember modifier to catch events outside marked DOM element",
   "keywords": [
     "ember-addon",

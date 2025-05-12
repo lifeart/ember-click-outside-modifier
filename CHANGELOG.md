@@ -2,6 +2,15 @@
 
 
 
+
+## v4.1.2 (2025-05-12)
+
+#### :bug: Bug Fix
+* [#47](https://github.com/lifeart/ember-click-outside-modifier/pull/47) Remove unneeded peer dependency declaration ([@SergeAstapov](https://github.com/SergeAstapov))
+
+#### Committers: 1
+- Sergey Astapov ([@SergeAstapov](https://github.com/SergeAstapov))
+
 ## v4.1.1 (2025-03-22)
 
 #### :bug: Bug Fix
